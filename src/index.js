@@ -5,23 +5,18 @@ const  mongoose  = require('mongoose');
 const app = express();
 
 const multer= require("multer");
-const { AppConfig } = require('aws-sdk');
 app.use(bodyParser.json());
 
 app.use(multer().any())
 
-mongoose.connect("mongodb+srv://jayvision:KQK8eFQqxCASWGRF@cluster0.6lmc5.mongodb.net/group27Database", {
+mongoose.connect("mongodb+srv://restapi:YxG6pvVdRkKiSH9k@cluster0.nedsvqo.mongodb.net/P-5(Group-27)", {
     useNewUrlParser: true
 })
 .then( () => console.log("MongoDb is connected"))
 .catch ( err => console.log(err) )
 
-
-
 app.use('/', route)
 
-
-app.listen(process.env.PORT || 3000, function () {
-    console.log('Express app running on port ' + (process.env.PORT || 3000))
+app.listen( 3000, function () {
+    console.log('Express app running on port ' + (3000))
 });
-
